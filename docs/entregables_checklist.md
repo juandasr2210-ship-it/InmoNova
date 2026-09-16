@@ -17,3 +17,9 @@
 & "C:\Program Files\Git\bin\git.exe" push -u origin main
 ```
 Verifica: tu GitHub muestra README + 3 commits.
+
+## Verificación 2026-09-16 (ejecutada en tu máquina)
+- Git local: 4 commits en `main`, árbol limpio, **sin remote** (pendiente que crees el repo en GitHub).
+- Código: 26 `.jsp` + `includes/*.jspf` + `WEB-INF/web.xml` + `sql/01` y `02` presentes.
+- XAMPP: MySQL apagado (error 2002) y puerto 8080 cerrado → enciende MySQL y Tomcat en el panel XAMPP y abre `http://localhost:8080/InmoNova/`.
+- Faltan (requieren tu cuenta/navegador): `docs/MER.pdf`, `docs/relacional.pdf`, `docs/padlet_captura.png`, push a GitHub, despliegue en línea.
