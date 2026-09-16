@@ -1,0 +1,4 @@
+/* InmoNova estilos */
+.hero{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200') center/cover;color:#fff;border-radius:1rem;padding:4rem 2rem}
+.card-prop img{height:200px;object-fit:cover}
+@media(max-width:576px){.hero{padding:2rem 1rem}}

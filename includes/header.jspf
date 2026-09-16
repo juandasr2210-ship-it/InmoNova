@@ -1,0 +1,44 @@
+<%-- includes/header.jspf : navbar dinamico segun rol (vista) + Bootstrap responsivo --%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+    String _rol = (String) session.getAttribute("usuario_rol");
+    String _correo = (String) session.getAttribute("usuario_correo");
+    if (_rol == null) _rol = "";
+    String _ctx = request.getContextPath();
+%>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%= _ctx %>/css/estilos.css" rel="stylesheet">
+<title>InmoNova - Inmobiliaria</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="<%= _ctx %>/index.jsp">🏠 InmoNova</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="<%= _ctx %>/index.jsp">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="<%= _ctx %>/catalogo.jsp">Catálogo</a></li>
+        <% if (_rol.equals("")) { %>
+          <li class="nav-item"><a class="nav-link" href="<%= _ctx %>/login.jsp">Ingresar</a></li>
+          <li class="nav-item"><a class="btn btn-primary btn-sm mt-1" href="<%= _ctx %>/registro.jsp">Registrarse</a></li>
+        <% } else if (_rol.equals("cliente")) { %>
+          <li class="nav-item"><a class="nav-link" href="<%= _ctx %>/cliente/dashboard.jsp">Mi panel</a></li>
+          <li class="nav-item"><a class="nav-link" href="<%= _ctx %>/logout.jsp">Salir (<%= _correo %>)</a></li>
+        <% } else if (_rol.equals("inmobiliaria")) { %>
+          <li class="nav-item"><a class="nav-link" href="<%= _ctx %>/inmobiliaria/dashboard.jsp">Panel agente</a></li>
+          <li class="nav-item"><a class="nav-link" href="<%= _ctx %>/logout.jsp">Salir</a></li>
+        <% } else if (_rol.equals("administrador")) { %>
+          <li class="nav-item"><a class="nav-link" href="<%= _ctx %>/admin/dashboard.jsp">Admin</a></li>
+          <li class="nav-item"><a class="nav-link" href="<%= _ctx %>/logout.jsp">Salir</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container my-4">

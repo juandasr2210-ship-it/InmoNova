@@ -1,0 +1,32 @@
+<%-- includes/seguridad.jspf : hash SHA-256 con salt + helpers de sesion/rol. Solo JSP, sin DAO. --%>
+<%@ page import="java.security.MessageDigest, java.security.SecureRandom" %>
+<%!
+    String sha256(String texto) throws Exception {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        byte[] h = md.digest(texto.getBytes("UTF-8"));
+        StringBuilder sb = new StringBuilder();
+        for (byte b : h) sb.append(String.format("%02X", b));
+        return sb.toString();
+    }
+    String generarSalt() {
+        SecureRandom r = new SecureRandom();
+        byte[] b = new byte[8];
+        r.nextBytes(b);
+        StringBuilder sb = new StringBuilder();
+        for (byte x : b) sb.append(String.format("%02x", x));
+        return sb.toString();
+    }
+    String hashConSalt(String salt, String clave) throws Exception {
+        return sha256(salt + clave);
+    }
+    boolean esEmail(String s) {
+        return s != null && s.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
+    }
+%>
+<%
+    // Helpers de sesion disponibles tras incluir este archivo:
+    // session attrs: usuario_id (Integer), usuario_correo (String), usuario_rol (String)
+    String rolSesion = (String) session.getAttribute("usuario_rol");
+    Integer idSesion = (Integer) session.getAttribute("usuario_id");
+    if (rolSesion == null) rolSesion = "";
+%>
