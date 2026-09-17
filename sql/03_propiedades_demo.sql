@@ -42,8 +42,8 @@ INSERT IGNORE INTO propiedad(id_inmobiliaria,id_ciudad,id_tipo,titulo,descripcio
  'Casa campestre El Tejar','Amplia casa de 2 pisos con jardín, 4 alcobas y estudio. Conjunto cerrado con piscina.',485000000,'Km 3 vía Piedecuesta','MI-DEMO-001','disponible',1,1),
 (@inm,(SELECT id_ciudad FROM ciudad WHERE nombre='Floridablanca'),(SELECT id_tipo FROM tipo_propiedad WHERE nombre='apartamento'),
  'Apartamento Cañaveral piso 12','Apartamento moderno con vista panorámica, 3 alcobas, balcón y cocina integral.',320000000,'Cll 30 # 25-40, Cañaveral','MI-DEMO-002','disponible',1,1),
-(@inm,(SELECT id_ciudad FROM ciudad WHERE nombre='Giron'),(SELECT id_tipo FROM tipo_propiedad WHERE nombre='local'),
- 'Local comercial centro Girón','Local esquinero de alto tráfico peatonal, ideal para restaurante o retail.',180000000,'Cra 25 # 30-15','MI-DEMO-003','disponible',0,1),
+(@inm,(SELECT id_ciudad FROM ciudad WHERE nombre='Cartagena'),(SELECT id_tipo FROM tipo_propiedad WHERE nombre='apartamento'),
+ 'Apartamento Bocagrande vista al mar','Apartamento con vista a la bahía, 2 alcobas, balcón amplio y piscina comunitaria.',385000000,'Cra 1 # 12-50, Bocagrande','MI-DEMO-003','disponible',0,1),
 (@inm,(SELECT id_ciudad FROM ciudad WHERE nombre='Bogota'),(SELECT id_tipo FROM tipo_propiedad WHERE nombre='oficina'),
  'Oficina Chapinero amoblada','Oficina lista para operar, 2 salas de juntas, fibra óptica y recepción.',450000000,'Cra 13 # 54-20, Of 301','MI-DEMO-004','disponible',1,1),
 (@inm,(SELECT id_ciudad FROM ciudad WHERE nombre='Piedecuesta'),(SELECT id_tipo FROM tipo_propiedad WHERE nombre='terreno'),
@@ -66,7 +66,7 @@ SET @p7=(SELECT id_propiedad FROM propiedad WHERE matricula_inmobiliaria='MI-DEM
 SET @p8=(SELECT id_propiedad FROM propiedad WHERE matricula_inmobiliaria='MI-DEMO-008');
 INSERT INTO imagen_propiedad(id_propiedad,url) SELECT @p1,'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600' WHERE NOT EXISTS(SELECT 1 FROM imagen_propiedad WHERE id_propiedad=@p1);
 INSERT INTO imagen_propiedad(id_propiedad,url) SELECT @p2,'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600' WHERE NOT EXISTS(SELECT 1 FROM imagen_propiedad WHERE id_propiedad=@p2);
-INSERT INTO imagen_propiedad(id_propiedad,url) SELECT @p3,'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600' WHERE NOT EXISTS(SELECT 1 FROM imagen_propiedad WHERE id_propiedad=@p3);
+INSERT INTO imagen_propiedad(id_propiedad,url) SELECT @p3,'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600' WHERE NOT EXISTS(SELECT 1 FROM imagen_propiedad WHERE id_propiedad=@p3);
 INSERT INTO imagen_propiedad(id_propiedad,url) SELECT @p4,'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600' WHERE NOT EXISTS(SELECT 1 FROM imagen_propiedad WHERE id_propiedad=@p4);
 INSERT INTO imagen_propiedad(id_propiedad,url) SELECT @p5,'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600' WHERE NOT EXISTS(SELECT 1 FROM imagen_propiedad WHERE id_propiedad=@p5);
 INSERT INTO imagen_propiedad(id_propiedad,url) SELECT @p6,'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600' WHERE NOT EXISTS(SELECT 1 FROM imagen_propiedad WHERE id_propiedad=@p6);
@@ -82,6 +82,8 @@ INSERT IGNORE INTO propiedad_caracteristica(id_propiedad,id_caracteristica) VALU
 (@p2,(SELECT id_caracteristica FROM caracteristica WHERE nombre='balcon')),
 (@p2,(SELECT id_caracteristica FROM caracteristica WHERE nombre='cocina integral')),
 (@p2,(SELECT id_caracteristica FROM caracteristica WHERE nombre='gimnasio')),
+(@p3,(SELECT id_caracteristica FROM caracteristica WHERE nombre='balcon')),
+(@p3,(SELECT id_caracteristica FROM caracteristica WHERE nombre='piscina')),
 (@p4,(SELECT id_caracteristica FROM caracteristica WHERE nombre='ascensor')),
 (@p4,(SELECT id_caracteristica FROM caracteristica WHERE nombre='porteria 24h')),
 (@p5,(SELECT id_caracteristica FROM caracteristica WHERE nombre='porteria 24h')),
