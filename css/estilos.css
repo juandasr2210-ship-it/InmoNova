@@ -13,7 +13,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--nova-
 
 /* ---------- Navbar vidrio ---------- */
 .navbar-nova{background:rgba(15,23,42,.85)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 4px 24px rgba(15,23,42,.25);}
-.navbar-nova .navbar-brand{background:linear-gradient(90deg,#fff,#c7d2fe);-webkit-background-clip:text;background-clip:text;color:transparent!important;font-weight:800;letter-spacing:.3px;}
+.navbar-nova .navbar-brand{color:#fff!important;font-weight:800;letter-spacing:.3px;}
 .navbar-nova .nav-link{color:#cbd5e1!important;font-weight:600;margin:0 .15rem;border-radius:.6rem;padding:.45rem .8rem!important;transition:.2s;}
 .navbar-nova .nav-link:hover{color:#fff!important;background:rgba(255,255,255,.1);}
 .btn-nova{background:linear-gradient(135deg,var(--nova-indigo),var(--nova-violet));border:none;color:#fff;font-weight:700;border-radius:999px;padding:.45rem 1.3rem;box-shadow:0 6px 18px rgba(99,102,241,.4);transition:.2s;}
@@ -32,7 +32,10 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--nova-
   padding:4.5rem 2.5rem 3.5rem;}
 .hero-nova::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);background-size:22px 22px;pointer-events:none;}
 .hero-nova h1{font-weight:800;letter-spacing:-.5px;}
-.hero-nova .grad{background:linear-gradient(90deg,var(--nova-cyan),#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero-nova .grad{color:#67e8f9;}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .hero-nova .grad{background:linear-gradient(90deg,#67e8f9,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent;}
+}
 .search-card{background:rgba(255,255,255,.96);border-radius:1.25rem;box-shadow:0 20px 50px rgba(0,0,0,.35);position:relative;z-index:2;}
 .search-card .form-control,.search-card .form-select{border-radius:.9rem;border:1.5px solid #e2e8f0;padding:.65rem .9rem;}
 .search-card .form-control:focus,.search-card .form-select:focus{border-color:var(--nova-indigo);box-shadow:0 0 0 .2rem rgba(99,102,241,.18);}
@@ -46,7 +49,12 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--nova-
 .prop-card:hover{transform:translateY(-6px);box-shadow:var(--nova-shadow-hover);}
 .prop-card img{height:210px;object-fit:cover;transition:transform .4s;}
 .prop-card:hover img{transform:scale(1.05);}
-.prop-card .price{font-size:1.25rem;font-weight:800;background:linear-gradient(90deg,var(--nova-indigo),var(--nova-violet));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.prop-card .price{font-size:1.25rem;font-weight:800;color:#4f46e5;}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .prop-card .price{background:linear-gradient(90deg,var(--nova-indigo),var(--nova-violet));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  p.price{background:linear-gradient(90deg,var(--nova-indigo),var(--nova-violet));-webkit-background-clip:text;background-clip:text;color:transparent;}
+}
+p.price{color:#4f46e5;font-weight:800;}
 .badge-nova{background:linear-gradient(135deg,var(--nova-indigo),var(--nova-violet));border-radius:999px;font-weight:700;padding:.35em .8em;}
 .badge-city{background:rgba(34,211,238,.15);color:#0e7490;border-radius:999px;font-weight:700;padding:.35em .8em;}
 .card-prop img{height:210px;object-fit:cover;} /* compat */
