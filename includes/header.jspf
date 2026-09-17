@@ -1,6 +1,7 @@
 <%-- includes/header.jspf : navbar dinamico segun rol (vista) + Bootstrap responsivo --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
+    try { request.setCharacterEncoding("UTF-8"); } catch (Exception _e) {}
     String _rol = (String) session.getAttribute("usuario_rol");
     String _correo = (String) session.getAttribute("usuario_correo");
     if (_rol == null) _rol = "";

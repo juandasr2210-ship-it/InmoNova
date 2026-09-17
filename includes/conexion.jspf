@@ -1,11 +1,12 @@
 <%-- includes/conexion.jspf : UNICA conexion JDBC centralizada. No repetir en cada JSP. --%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.sql.*" %>
 <%
     String DB_URL  = application.getInitParameter("db.url");
     String DB_USER = application.getInitParameter("db.user");
     String DB_PASS = application.getInitParameter("db.pass");
     String DB_DRIVER = application.getInitParameter("db.driver");
-    if (DB_URL == null)  DB_URL  = "jdbc:mysql://localhost:3306/inmonova?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    if (DB_URL == null)  DB_URL  = "jdbc:mysql://localhost:3306/inmonova?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8";
     if (DB_USER == null) DB_USER = "root";
     if (DB_PASS == null) DB_PASS = "";
     if (DB_DRIVER == null) DB_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -17,7 +18,7 @@
         String usr = app.getInitParameter("db.user");
         String pwd = app.getInitParameter("db.pass");
         String drv = app.getInitParameter("db.driver");
-        if (url == null) url = "jdbc:mysql://localhost:3306/inmonova?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+        if (url == null) url = "jdbc:mysql://localhost:3306/inmonova?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8";
         if (usr == null) usr = "root";
         if (pwd == null) pwd = "";
         if (drv == null) drv = "com.mysql.cj.jdbc.Driver";
