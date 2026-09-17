@@ -1,7 +1,14 @@
 <%-- includes/footer.jspf --%>
 </main>
-<footer class="bg-dark text-white text-center py-3 mt-5">
-  <small>InmoNova UTS &copy; 2026 - Sprint 1: Landing + Auth con JSP + JDBC + MySQL</small>
+<footer class="footer-nova text-white mt-5">
+  <div class="container py-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+    <div><span class="fw-bold">🏠 InmoNova</span> <small class="text-white-50">· UTS © 2026 · JSP + JDBC + MySQL</small></div>
+    <div class="d-flex gap-3">
+      <a href="<%= request.getContextPath() %>/index.jsp">Inicio</a>
+      <a href="<%= request.getContextPath() %>/catalogo.jsp">Catálogo</a>
+      <a href="<%= request.getContextPath() %>/login.jsp">Ingresar</a>
+    </div>
+  </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

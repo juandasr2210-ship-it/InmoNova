@@ -1,4 +1,69 @@
-/* InmoNova estilos */
-.hero{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200') center/cover;color:#fff;border-radius:1rem;padding:4rem 2rem}
-.card-prop img{height:200px;object-fit:cover}
-@media(max-width:576px){.hero{padding:2rem 1rem}}
+/* ============ InmoNova · Tema moderno 2026 ============ */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --nova-900:#0f172a; --nova-800:#1e1b4b;
+  --nova-indigo:#6366f1; --nova-violet:#8b5cf6; --nova-cyan:#22d3ee;
+  --nova-bg:#f4f5fb; --nova-card:#ffffff; --nova-muted:#64748b;
+  --nova-radius:1.25rem;
+  --nova-shadow:0 10px 30px rgba(15,23,42,.10);
+  --nova-shadow-hover:0 18px 45px rgba(99,102,241,.22);
+}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--nova-bg);color:var(--nova-900);}
+
+/* ---------- Navbar vidrio ---------- */
+.navbar-nova{background:rgba(15,23,42,.85)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 4px 24px rgba(15,23,42,.25);}
+.navbar-nova .navbar-brand{background:linear-gradient(90deg,#fff,#c7d2fe);-webkit-background-clip:text;background-clip:text;color:transparent!important;font-weight:800;letter-spacing:.3px;}
+.navbar-nova .nav-link{color:#cbd5e1!important;font-weight:600;margin:0 .15rem;border-radius:.6rem;padding:.45rem .8rem!important;transition:.2s;}
+.navbar-nova .nav-link:hover{color:#fff!important;background:rgba(255,255,255,.1);}
+.btn-nova{background:linear-gradient(135deg,var(--nova-indigo),var(--nova-violet));border:none;color:#fff;font-weight:700;border-radius:999px;padding:.45rem 1.3rem;box-shadow:0 6px 18px rgba(99,102,241,.4);transition:.2s;}
+.btn-nova:hover{color:#fff;transform:translateY(-1px);box-shadow:0 10px 24px rgba(99,102,241,.5);filter:brightness(1.07);}
+
+/* ---------- Botones Bootstrap con identidad ---------- */
+.btn-primary{--bs-btn-bg:var(--nova-indigo);--bs-btn-border-color:var(--nova-indigo);--bs-btn-hover-bg:var(--nova-violet);--bs-btn-hover-border-color:var(--nova-violet);border-radius:999px;font-weight:700;padding:.5rem 1.4rem;}
+.btn-outline-primary{--bs-btn-color:var(--nova-indigo);--bs-btn-border-color:var(--nova-indigo);--bs-btn-hover-bg:var(--nova-indigo);border-radius:999px;font-weight:700;}
+.btn-success{border-radius:999px;font-weight:700;}
+
+/* ---------- Hero ---------- */
+.hero-nova{position:relative;overflow:hidden;border-radius:1.75rem;color:#fff;
+  background:radial-gradient(1000px 400px at 10% -10%,rgba(34,211,238,.45),transparent 60%),
+             radial-gradient(900px 420px at 95% 10%,rgba(139,92,246,.55),transparent 60%),
+             linear-gradient(135deg,#0f172a 0%,#1e1b4b 55%,#312e81 100%);
+  padding:4.5rem 2.5rem 3.5rem;}
+.hero-nova::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);background-size:22px 22px;pointer-events:none;}
+.hero-nova h1{font-weight:800;letter-spacing:-.5px;}
+.hero-nova .grad{background:linear-gradient(90deg,var(--nova-cyan),#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.search-card{background:rgba(255,255,255,.96);border-radius:1.25rem;box-shadow:0 20px 50px rgba(0,0,0,.35);position:relative;z-index:2;}
+.search-card .form-control,.search-card .form-select{border-radius:.9rem;border:1.5px solid #e2e8f0;padding:.65rem .9rem;}
+.search-card .form-control:focus,.search-card .form-select:focus{border-color:var(--nova-indigo);box-shadow:0 0 0 .2rem rgba(99,102,241,.18);}
+
+/* ---------- Títulos de sección ---------- */
+.sec-title{font-weight:800;letter-spacing:-.3px;display:flex;align-items:center;gap:.6rem;margin:1.8rem 0 1rem;}
+.sec-title::before{content:"";width:.45rem;height:1.6rem;border-radius:99px;background:linear-gradient(180deg,var(--nova-indigo),var(--nova-cyan));}
+
+/* ---------- Tarjetas de propiedad ---------- */
+.prop-card{border:none;border-radius:var(--nova-radius);overflow:hidden;background:var(--nova-card);box-shadow:var(--nova-shadow);transition:transform .25s,box-shadow .25s;animation:fadeUp .5s ease both;}
+.prop-card:hover{transform:translateY(-6px);box-shadow:var(--nova-shadow-hover);}
+.prop-card img{height:210px;object-fit:cover;transition:transform .4s;}
+.prop-card:hover img{transform:scale(1.05);}
+.prop-card .price{font-size:1.25rem;font-weight:800;background:linear-gradient(90deg,var(--nova-indigo),var(--nova-violet));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.badge-nova{background:linear-gradient(135deg,var(--nova-indigo),var(--nova-violet));border-radius:999px;font-weight:700;padding:.35em .8em;}
+.badge-city{background:rgba(34,211,238,.15);color:#0e7490;border-radius:999px;font-weight:700;padding:.35em .8em;}
+.card-prop img{height:210px;object-fit:cover;} /* compat */
+
+/* ---------- Paneles / tablas ---------- */
+.panel-card{background:#fff;border-radius:var(--nova-radius);box-shadow:var(--nova-shadow);padding:1.5rem;}
+.table{border-radius:1rem;overflow:hidden;}
+.table thead th{background:var(--nova-900);color:#fff;border:none;}
+
+/* ---------- Formularios ---------- */
+.form-control,.form-select{border-radius:.8rem;border:1.5px solid #e2e8f0;padding:.6rem .9rem;}
+.form-control:focus,.form-select:focus{border-color:var(--nova-indigo);box-shadow:0 0 0 .2rem rgba(99,102,241,.15);}
+label{font-weight:700;font-size:.9rem;color:#334155;}
+
+/* ---------- Footer ---------- */
+.footer-nova{background:linear-gradient(135deg,#0f172a,#1e1b4b 60%,#312e81);border-top:1px solid rgba(255,255,255,.08);}
+.footer-nova a{color:#c4b5fd;text-decoration:none;} .footer-nova a:hover{color:#fff;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+@media(max-width:576px){.hero-nova{padding:2.2rem 1.2rem;border-radius:1.1rem;}.prop-card img{height:180px;}}
