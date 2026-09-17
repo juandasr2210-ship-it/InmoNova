@@ -2,3 +2,4 @@ WEB-INF/classes/
 *.class
 .idea/
 .vscode/settings.json
+docs.zip
