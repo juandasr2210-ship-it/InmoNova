@@ -2,11 +2,11 @@
 
 - [x] **Código fuente**: 30 JSP/JSPF, `WEB-INF/web.xml`, `sql/01` + `02`, `src/` legacy. Git: 3 commits (Sprint 1/2/3).
 - [x] **Docs Scrum**: `docs/scrum/product_backlog.md`, `sprint1/2/3.md` (planning+review+retro).
-- [x] **Modelo**: `docs/MER.svg`, `docs/relacional.svg` + `MER.html`/`relacional.html` → exportar a `MER.pdf` y `relacional.pdf` (abrir y Ctrl+P).
+- [x] **Modelo**: `docs/MER.pdf`, `docs/relacional.pdf` (+ `.svg` y exportadores `.html`) y documento completo `docs/InmoNova_Docs.pdf`.
 - [x] **Diccionario + consultas**: `docs/diccionario_datos.md`, `docs/consultas_obligatorias.sql` (5 consultas).
 - [x] **Pruebas**: `docs/pruebas.md`.
-- [ ] **Padlet**: sigue `docs/tablero_padlet_guia.md`, sube captura a `docs/padlet_captura.png` y pega aquí tu link: `PEGA_AQUI_TU_LINK_PADLET`.
-- [ ] **Repo público**: crea repo vacío en github.com/new (nombre `InmoNova`) y ejecuta abajo “Publicar”.
+- [x] **Padlet**: tablero https://padlet.com/juandasr2210/scrum-s023o8bc00b6jj6vhgqj + captura `docs/padlet_captura.jpeg` + PDFs `docs/scrum/Sprint_1/2/3_InmoNova.pdf`.
+- [x] **Repo público**: https://github.com/juandasr2210-ship-it/InmoNova (ver sección Publicar).
 - [ ] **En línea**: `docs/despliegue_online.md` (Railway + Render).
 - [ ] **Sustentación**: `docs/guia_sustentacion.md` (ensayar 5 min por persona).
 
