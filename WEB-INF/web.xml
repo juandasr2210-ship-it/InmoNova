@@ -26,6 +26,16 @@
         <param-value>com.mysql.cj.jdbc.Driver</param-value>
     </context-param>
 
+    <!-- ============ CONEXION EN LINEA (Neon PostgreSQL) ============
+         1) Importa sql/05_neon_postgres.sql en el SQL Editor de Neon.
+         2) Copia postgresql-42.7.x.jar a C:\xampp\tomcat\lib y reinicia Tomcat.
+         3) Reemplaza los 3 valores de arriba por estos (driver org.postgresql.Driver):
+         db.url  = jdbc:postgresql://TU_ENDPOINT.neon.tech:5432/inmonova?sslmode=require
+         db.user = TU_USUARIO_NEON
+         db.pass = TU_CLAVE_NEON
+         Para volver a local, restaura los valores MySQL. El codigo JSP
+         es portable y funciona en ambas sin cambios. -->
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

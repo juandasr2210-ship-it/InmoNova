@@ -10,7 +10,10 @@ int idu=(Integer)session.getAttribute("usuario_id");
 <%
 if(request.getParameter("add")!=null){
   Connection ca=null;java.sql.PreparedStatement pa=null;
-  try{ca=abrirConexion(application);pa=ca.prepareStatement("INSERT IGNORE INTO favorito(id_usuario,id_propiedad) VALUES(?,?)");pa.setInt(1,idu);pa.setInt(2,Integer.parseInt(request.getParameter("add")));pa.executeUpdate();}catch(Exception e){%><div class="alert alert-danger"><%=e.getMessage()%></div><%}finally{try{if(pa!=null)pa.close();}catch(Exception x){}try{if(ca!=null)ca.close();}catch(Exception x){}}
+  try{ca=abrirConexion(application);
+    java.sql.PreparedStatement q=ca.prepareStatement("SELECT 1 FROM favorito WHERE id_usuario=? AND id_propiedad=?");q.setInt(1,idu);q.setInt(2,Integer.parseInt(request.getParameter("add")));java.sql.ResultSet rq=q.executeQuery();
+    if(!rq.next()){ pa=ca.prepareStatement("INSERT INTO favorito(id_usuario,id_propiedad) VALUES(?,?)");pa.setInt(1,idu);pa.setInt(2,Integer.parseInt(request.getParameter("add")));pa.executeUpdate(); }
+    rq.close();q.close();}catch(Exception e){%><div class="alert alert-danger"><%=e.getMessage()%></div><%}finally{try{if(pa!=null)pa.close();}catch(Exception x){}try{if(ca!=null)ca.close();}catch(Exception x){}}
 }
 if(request.getParameter("del")!=null){
   Connection cd=null;java.sql.PreparedStatement pd=null;
